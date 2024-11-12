@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gourmet Eats - Continental Dishes</title>
+    <link rel="stylesheet" href="/src/main/resources/templates/style.css">
+    <style>/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Header and Navbar */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+nav .cart-link {
+    background-color: #ff6347;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    background-color: #000;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-text button {
+    background-color: #ff6347;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background-color: #ff4500;
+}
+
+/* Menu Section */
+#menu {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+#menu h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.menu-item .price {
+    font-size: 1.2rem;
+    color: #ff6347;
+    margin-bottom: 15px;
+}
+
+.menu-item button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #ff4500;
+}
+
+/* Contact Form */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+#contact form button:hover {
+    background-color: #ff4500;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Gourmet Eats Logo">
+                <h1>Gourmet Eats</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cart" class="cart-link">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="images/hero.jpg" alt="Delicious Continental Dishes" class="hero-image">
+        <div class="hero-text">
+            <h2>Welcome to Gourmet Eats</h2>
+            <p>Explore the finest continental dishes delivered to your door</p>
+            <button onclick="window.location.href='#menu'">Explore Menu</button>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Continental Menu</h2>
+        <div class="menu-items">
+            <!-- Dish 1 -->
+            <div class="menu-item">
+                <img src="images/dish1.jpg" alt="Dish 1">
+                <h3>Spaghetti Carbonara</h3>
+                <p>A classic Italian pasta with a creamy egg-based sauce.</p>
+                <p class="price">$14.99</p>
+                <button class="add-to-cart" onclick="addToCart('Spaghetti Carbonara', 14.99)">Add to Cart</button>
+            </div>
+            <!-- Dish 2 -->
+            <div class="menu-item">
+                <img src="images/dish2.jpg" alt="Dish 2">
+                <h3>Chicken Alfredo</h3>
+                <p>Grilled chicken over pasta, served with a creamy Alfredo sauce.</p>
+                <p class="price">$16.99</p>
+                <button class="add-to-cart" onclick="addToCart('Chicken Alfredo', 16.99)">Add to Cart</button>
+            </div>
+            <!-- Dish 3 -->
+            <div class="menu-item">
+                <img src="images/dish3.jpg" alt="Dish 3">
+                <h3>Beef Wellington</h3>
+                <p>Premium beef wrapped in pastry with a mushroom duxelles filling.</p>
+                <p class="price">$22.99</p>
+                <button class="add-to-cart" onclick="addToCart('Beef Wellington', 22.99)">Add to Cart</button>
+            </div>
+            <!-- Dish 4 -->
+            <div class="menu-item">
+                <img src="images/dish4.jpg" alt="Dish 4">
+                <h3>Seafood Paella</h3>
+                <p>A Spanish rice dish with mixed seafood, saffron, and spices.</p>
+                <p class="price">$19.99</p>
+                <button class="add-to-cart" onclick="addToCart('Seafood Paella', 19.99)">Add to Cart</button>
+            </div>
+            <!-- Dish 5 -->
+            <div class="menu-item">
+                <img src="images/dish5.jpg" alt="Dish 5">
+                <h3>Vegetable Risotto</h3>
+                <p>A creamy risotto with seasonal vegetables and Parmesan.</p>
+                <p class="price">$12.99</p>
+                <button class="add-to-cart" onclick="addToCart('Vegetable Risotto', 12.99)">Add to Cart</button>
+            </div>
+            <!-- Dish 6 -->
+            <div class="menu-item">
+                <img src="images/dish6.jpg" alt="Dish 6">
+                <h3>Chicken Cacciatore</h3>
+                <p>Chicken cooked in a rich tomato sauce with herbs and olives.</p>
+                <p class="price">$17.99</p>
+                <button class="add-to-cart" onclick="addToCart('Chicken Cacciatore', 17.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Gourmet Eats, we bring you the finest continental dishes from around the world. Whether it's an Italian classic or a Mediterranean delight, we focus on quality ingredients, authentic recipes, and excellent service. Enjoy a world-class dining experience, right from the comfort of your home!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Gourmet Eats. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
